@@ -6,5 +6,13 @@ import { Item } from '../models/item';
 })
 export class ItemsService {
 
+  itemArray: Item[] = []
+
   constructor() { }
+
+  recuperaArray(){
+    return this.itemArray
+    console.log("array generale:", this.itemArray)
+  }
+
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Item } from 'src/app/models/item';
+import { ItemsService } from 'src/app/services/items.service';
 
 @Component({
   selector: 'app-completed',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompletedComponent implements OnInit {
 
-  constructor() { }
+  itemArray: Item[] = []
 
-  ngOnInit(): void {
+  constructor(private itemSrv: ItemsService) { }
+
+  ngOnInit() {
+    this.itemArray = this.itemSrv.recuperaArray()
+    return this.itemArray
   }
 
 }
